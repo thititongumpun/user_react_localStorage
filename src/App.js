@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react';
+
 import UserList from './components/UserList';
 
 function App() {

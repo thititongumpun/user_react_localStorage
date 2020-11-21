@@ -6,7 +6,7 @@ class UserForm extends Component {
     }
 
     returnUserObject() {
-        if(this.props.currentUser == -1){
+        if(this.props.currentUser === -1){
             return {
                 name: '',
                 age: '',
@@ -18,7 +18,7 @@ class UserForm extends Component {
     }
 
     componentDidUpdate(prev) {
-        if (prev.currentUser !== this.props.currentUser || prev.list != this.props.list) {
+        if (prev.currentUser !== this.props.currentUser || prev.list !== this.props.list) {
             this.setState({ ...this.returnUserObject })
             console.log(prev, this.props);
             
@@ -31,9 +31,14 @@ class UserForm extends Component {
         })
     }
 
+    // handleEdit = (e) => {
+    //     e.preventDefault()
+    //     this.props.addOrEdit(this.state);
+    // }
+
     handleSubmit = (e) => {
         e.preventDefault()
-        this.props.addOrEdit(this.state)
+        this.props.addOrEdit(this.state);
     }
 
     render() {
